@@ -17,8 +17,17 @@ const App = () => {
   fetchData()
   }, [])
 
-  return isLoading ? <div>Loading</div> : data.map((pokemon, each) => {
-    return <PokedexPokemonComponent key={each} id={each+1} name={pokemon.name} />
-  })
+  return (
+    <div className="container-fluid">
+      <div className="row">
+    {
+      isLoading ? <div>Loading</div> : data.map((pokemon, each) => {
+        return <PokedexPokemonComponent key={each} id={each+1} name={pokemon.name} />
+      })
+    }
+
+    </div>
+  </div>
+  )
 }
 export default App;
