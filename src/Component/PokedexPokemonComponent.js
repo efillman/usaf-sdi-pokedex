@@ -9,35 +9,23 @@ const PokedexPokemonComponent = (props) => {
   const history = useHistory();
 
   const handleOnClick = () => {
-    history.push(`/${data.name}`);
+    history.push(`/${props.data.name}`);
   }
-
-
- useEffect(() => {
-    async function fetchData() {
-    setIsLoading(true)
-    const fetcher = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}/`)
-    const response = await fetcher.json()
-    setData(response)
-    setIsLoading(false)
-  }
-  fetchData()
-  }, [props.name])
 
   const displayPokemonCard = () => {
     return (
     <div className="card col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-6" onClick={handleOnClick}>
-      <img src={data.sprites.front_default} className="card-img-top" alt={data.name}></img>
+      <img src={props.data.data.sprites.front_default} className="card-img-top" alt={props.data.name}></img>
       <div className="card-body align-items-center justify-content-center">
         <div className="card-text text-center">
-          <h6 className="text-capitalize">{data.name}</h6>
+        <h6 className="text-capitalize">{props.data.name}</h6>
         </div>
       </div>
     </div>
     )
   }
 
-  return isLoading ? <div>Loading</div> : displayPokemonCard()
+  return displayPokemonCard()
 }
 
 export default PokedexPokemonComponent;

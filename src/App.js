@@ -1,8 +1,10 @@
-import React, { } from 'react';
 import Header from "./Header"
-import Router from "./Router"
+import RouterComponent from "./RouterComponent"
+import DataCache from "./Component/DataCache"
+import React, { useState } from 'react';
 
 const App = () => {
+  const [ data, setData ] = useState([])
 
   //need the navbar component with the link
   //need the "router" component that switches components
@@ -10,7 +12,8 @@ const App = () => {
   return (
     <div className="container-fluid p-0">
       <Header />
-      <Router />
+      <DataCache callback={(data) => setData(data)} />
+      <RouterComponent data={data.results} />
     </div>
   )
 }
