@@ -8,7 +8,7 @@ const App = () => {
   //need the "router" component that switches components
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0">
       <Header />
       <Router />
     </div>
