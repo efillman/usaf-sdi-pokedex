@@ -1,33 +1,17 @@
-import './App.css';
-import React, { useState, useEffect } from 'react';
-import PokedexPokemonComponent from './Component/PokedexPokemonComponent';
+import React, { } from 'react';
+import Header from "./Header"
+import Router from "./Router"
 
 const App = () => {
-  const [ isLoading, setIsLoading ] = useState(true)
-  const [ data, setData ] = useState([])
 
- useEffect(() => {
-    async function fetchData() {
-    setIsLoading(true)
-    const fetcher = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=151')
-    const response = await fetcher.json()
-    setData(response.results)
-    setIsLoading(false)
-  }
-  fetchData()
-  }, [])
+  //need the navbar component with the link
+  //need the "router" component that switches components
 
   return (
     <div className="container-fluid">
-      <div className="row">
-    {
-      isLoading ? <div>Loading</div> : data.map((pokemon, each) => {
-        return <PokedexPokemonComponent key={each} id={each+1} name={pokemon.name} />
-      })
-    }
-
+      <Header />
+      <Router />
     </div>
-  </div>
   )
 }
 export default App;

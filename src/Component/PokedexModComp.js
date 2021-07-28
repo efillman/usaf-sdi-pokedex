@@ -23,7 +23,7 @@ const PokedexModComp = (props) => {
       </p>
     </Modal.Body>
     <Modal.Footer>
-      <Button onClick={props.onHide}>Close</Button>
+      <button onClick={props.onHide}>Close</button>
     </Modal.Footer>
   </Modal>
 );
