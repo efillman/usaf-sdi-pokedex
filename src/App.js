@@ -11,7 +11,6 @@ const App = () => {
 
   return (
     <div className="container-fluid p-0">
-      <Header />
       <DataCache callback={(data) => setData(data)} />
       <RouterComponent data={data.results} />
     </div>

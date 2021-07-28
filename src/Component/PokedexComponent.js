@@ -3,8 +3,6 @@ import PokedexPokemonComponent from './PokedexPokemonComponent';
 import { withRouter } from "react-router-dom";
 
 const PokedexComponent = (props) => {
-  const [ isLoading, setIsLoading ] = useState(true)
-  const [ data, setData ] = useState([])
 
   return (
     <div className="container-fluid">

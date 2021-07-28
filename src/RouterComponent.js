@@ -1,35 +1,40 @@
 import React, { } from 'react';
-import { Switch, Route, Router } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Home from './Component/Home'
 import PokedexComponent from './Component/PokedexComponent'
 import About from './Component/About'
 import PokemonComponent from './Component/PokemonComponent'
+import Header from "./Header"
 
-const RouterComponent = (props) => {
+class RouterComponent extends React.Component {
 
-  const displayRouter = () => {
+  constructor(){
+    super();
+    this.state = {
+
+    }
+  }
+
+  render(){
     return (
+      //props.data ?  <PokedexComponent {...props} /> : <div>Loading</div>
+
+      <BrowserRouter >
+      <Header />
       <main>
         <Switch >
-          <Route exact path="/" component={ props => <PokedexComponent {...props} />} />
-          <Route exact path="/about" render={ props => <About {...props} />} />
-          <Route exact path="/:pokemon" component={PokemonComponent} />
+          <Route exact path="/" >
+            <PokedexComponent {...this.props} />
+          </Route>
+          <Route exact path="/about" component={About} />
+          <Route exact path="/:pokemon/:id">
+            <PokemonComponent {...this.props} />
+          </Route>
         </Switch>
       </main>
+      </BrowserRouter>
     )
   }
-//<Route path="/greeting/:name" render={(props) => <Greeting text="Hello, " {...props} />} />
-
-  return (
-    props.data ?  <PokedexComponent {...props} /> : <div>Loading</div>
-
-    // <Switch >
-    //   <Route exact={true} path="/" render={(props) => <PokedexComponent {...props} pageID={2} />} />
-    //   <Route exact path="/" component={ props => <PokedexComponent {...props} />} />
-    //   <Route exact path="/about" render={ props => <About {...props} />} />
-    //   <Route exact path="/:pokemon" component={PokemonComponent} />
-    // </Switch>
-  )
 }
 
 export default RouterComponent

@@ -9,7 +9,7 @@ const PokedexPokemonComponent = (props) => {
   const history = useHistory();
 
   const handleOnClick = () => {
-    history.push(`/${props.data.name}`);
+    history.push(`/${props.data.name}/${props.id}`);
   }
 
   const displayPokemonCard = () => {

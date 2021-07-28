@@ -5,7 +5,7 @@ const About = (props) => {
   return (
     <div>
       <h1>About Page</h1>
-      {props.data ? <div>{props.data.length}</div> : <div>prop did not load </div>}
+      <div>By Hector and Evan</div>
     </div>
   )
 
