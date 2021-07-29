@@ -38,13 +38,13 @@ const PokemonComponent = (props) => {
       <div className="card-body align-items-center justify-content-center">
         <div className="card-text text-center">
         <h6 className="text-capitalize">{pokemonData.name}</h6>
-        <p>Abilities
+        <span>Abilities</span>
         <ul>
         {pokemonData.abilities.map((ability) => {
           return <li>{ability.ability.name}</li>
         })}
         </ul>
-        </p>
+
         </div>
       </div>
     </div>
