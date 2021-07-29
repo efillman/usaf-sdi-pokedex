@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import PokedexModal from './PokedexModal';
-import { Link, useHistory } from "react-router-dom";
+import React, {  } from 'react';
+import { useHistory } from "react-router-dom";
 
 const PokedexPokemonComponent = (props) => {
-  const [ isLoading, setIsLoading ] = useState(true)
-  const [ data, setData ] = useState([])
-  const [modalShow, setModalShow] = React.useState(false);
   const history = useHistory();
 
   const handleOnClick = () => {
-    history.push(`/${props.data.name}/${props.id}`);
+    history.push(`/pokemon/${props.data.name}`);
   }
 
   const displayPokemonCard = () => {

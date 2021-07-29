@@ -1,10 +1,8 @@
 import React, { } from 'react';
-import { Switch, Route, BrowserRouter } from "react-router-dom";
-import Home from './Component/Home'
+import { Switch, Route} from "react-router-dom";
 import PokedexComponent from './Component/PokedexComponent'
 import About from './Component/About'
 import PokemonComponent from './Component/PokemonComponent'
-import Header from "./Header"
 
 class RouterComponent extends React.Component {
 
@@ -17,22 +15,18 @@ class RouterComponent extends React.Component {
 
   render(){
     return (
-      //props.data ?  <PokedexComponent {...props} /> : <div>Loading</div>
-
-      <BrowserRouter >
-      <Header />
       <main>
         <Switch >
           <Route exact path="/" >
             <PokedexComponent {...this.props} />
           </Route>
           <Route exact path="/about" component={About} />
-          <Route exact path="/:pokemon/:id">
+          <Route exact path="/pokemon/:pokemon">
             <PokemonComponent {...this.props} />
           </Route>
         </Switch>
       </main>
-      </BrowserRouter>
+
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { } from 'react';
 import PokedexPokemonComponent from './PokedexPokemonComponent';
 import { withRouter } from "react-router-dom";
 
